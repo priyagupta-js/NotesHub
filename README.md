@@ -1,36 +1,212 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NotesHub - Full Stack Notes Application
 
-## Getting Started
+NotesHub is a full-stack Notes Management application built using **Next.js**, **Node.js**, **Express.js**, and **MongoDB** with secure JWT-based authentication.
 
-First, run the development server:
+The application allows users to:
+
+* Register and log in securely
+* Create, read, update, and delete notes
+* Access protected routes using JWT authentication
+* Manage personal notes with a clean and responsive UI
+
+---
+
+# Tech Stack
+
+## Frontend
+
+* Next.js (App Router)
+* Tailwind CSS
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
+
+---
+
+# Features
+
+## Authentication
+
+* User Signup
+* User Login
+* JWT Token Authentication
+* Protected Routes
+
+## Notes Management
+
+* Create Notes
+* View Notes
+* Update Notes
+* Delete Notes
+
+## UI Features
+
+* Responsive Design
+* Modern and Clean Interface
+* User-Friendly Layout
+
+---
+
+# Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NotesHub/
+│
+├── backend/
+│   ├── config/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── .env
+│   ├── .env.example
+│   └── server.js
+│
+└── frontend/
+    ├── app/
+    ├── public/
+    ├── .env.local
+    └── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Backend `.env`
 
-## Learn More
+Create a `.env` file inside the `backend` folder.
 
-To learn more about Next.js, take a look at the following resources:
+Example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+PORT=5000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# `.env.example`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+As required in the assignment, include the following file inside the backend folder:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## backend/.env.example
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+PORT=5000
+```
+
+---
+
+# Frontend Environment Variable
+
+Create a `.env.local` file inside the `frontend` folder.
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+---
+
+# Installation & Setup
+
+## 1. Clone Repository
+
+```bash
+git clone <your_repository_link>
+cd NotesHub
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Backend runs on:
+
+```bash
+http://localhost:5000
+```
+
+---
+
+# Frontend Setup
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+# API Endpoints
+
+## Authentication
+
+| Method | Endpoint         | Description   |
+| ------ | ---------------- | ------------- |
+| POST   | /api/auth/signup | Register user |
+| POST   | /api/auth/login  | Login user    |
+
+---
+
+## Notes
+
+| Method | Endpoint       | Description     |
+| ------ | -------------- | --------------- |
+| GET    | /api/notes     | Fetch all notes |
+| POST   | /api/notes     | Create note     |
+| PUT    | /api/notes/:id | Update note     |
+| DELETE | /api/notes/:id | Delete note     |
+
+---
+
+# Authentication Flow
+
+1. User logs in or signs up
+2. Backend returns JWT token
+3. Token stored in localStorage
+4. Protected routes use Authorization header
+
+Example:
+
+```bash
+Authorization: Bearer <token>
+```
+
+---
+
+# Security Features
+
+* Password hashing using bcryptjs
+* JWT token verification
+* Protected API routes
+* User-specific notes access
+
+---
+
+# Author
+
+Priya Gupta
