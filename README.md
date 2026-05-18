@@ -63,7 +63,6 @@ NotesHub/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
-│   ├── .env
 │   ├── .env.example
 │   └── server.js
 │
@@ -83,20 +82,6 @@ NotesHub/
 Create a `.env` file inside the `backend` folder.
 
 Example:
-
-```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PORT=5000
-```
-
----
-
-# `.env.example`
-
-As required in the assignment, include the following file inside the backend folder:
-
-## backend/.env.example
 
 ```env
 MONGO_URI=your_mongodb_connection_string
@@ -161,40 +146,12 @@ http://localhost:3000
 
 ---
 
-# API Endpoints
-
-## Authentication
-
-| Method | Endpoint         | Description   |
-| ------ | ---------------- | ------------- |
-| POST   | /api/auth/signup | Register user |
-| POST   | /api/auth/login  | Login user    |
-
----
-
-## Notes
-
-| Method | Endpoint       | Description     |
-| ------ | -------------- | --------------- |
-| GET    | /api/notes     | Fetch all notes |
-| POST   | /api/notes     | Create note     |
-| PUT    | /api/notes/:id | Update note     |
-| DELETE | /api/notes/:id | Delete note     |
-
----
-
 # Authentication Flow
 
 1. User logs in or signs up
 2. Backend returns JWT token
 3. Token stored in localStorage
 4. Protected routes use Authorization header
-
-Example:
-
-```bash
-Authorization: Bearer <token>
-```
 
 ---
 
@@ -206,7 +163,3 @@ Authorization: Bearer <token>
 * User-specific notes access
 
 ---
-
-# Author
-
-Priya Gupta
